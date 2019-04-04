@@ -1,3 +1,5 @@
+#Todo : Create a string function that is passed into the function as query 
+
 def filter_df(df_in,query) :
     t1 = time.time()
     df_out=df_in.query(query)
@@ -5,6 +7,6 @@ def filter_df(df_in,query) :
     print("Time taken = " , (t2-t1) , " seconds")
     #filtered_df.to_csv(output_file_name, encoding='utf-8', index=None)
     return df_out
-    
+
 #usage
 df_filtered= filter_df(train_head,'target==1')    
