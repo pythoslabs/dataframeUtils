@@ -2,3 +2,57 @@
 
 col_name =['A','B','C','D','E','F','G']
 df = pd.DataFrame(columns= col_names)
+
+-----------------------------------------------
+
+2. Add new row to dataframe 
+new_row = {'image_name':file_in_class, 'tags':''}
+#append row to the dataframe
+df_out = df_out.append(new_row, ignore_index=True)
+
+* remove duplicates from a dataframe based on one column
+df_out = df_out.drop_duplicates(subset='image_name', keep='first')
+
+
+selectively change datatype of a column while reading 
+combined_dataset = pd.read_csv("../data/mod/COMBINED_MOD_3.csv", dtype={'income_bracket':str})
+
+
+Changing only one value of a cell 
+ df.ix[row_num, 'column3] = val
+ df.loc[this_date, 'column3'] = val
+ df.at[this_date, 'column3'] = val
+
+
+
+Accessing the location 
+test_df.iloc[row_num,column_num]   ( index location ?? )
+or 
+test_df.loc[0,'column_name']
+eg : test_df.iloc[0,0]
+
+modifying the value at a cell location
+test_df.iloc[row_num,column_num] = new_value
+eg : test_df.iloc[0,0] = 72
+
+importing file which has Date columns 
+trn = pd.read_csv('../data_linux2.csv' ,parse_dates=True)
+it will be read as an 'Object' datatype
+
+dicing a dataframe 
+df1 = df.iloc[:,0:2]
+
+Split a column into two - based on the value in a column
+df['A'], df['B'] = df['AB'].str.split(' ', 1).str
+
+
+
+Renaming column names ( specific ones )
+combined_df = combined_df.rename(columns={'num_records': 'num_usr_rec_log'})
+
+features = ['LotArea', 'YearBuilt', '1stFlrSF', '2ndFlrSF', 'FullBath', 'BedroomAbvGr', 'TotRmsAbvGrd']
+X = X_full[features].copy()
+
+
+
+
