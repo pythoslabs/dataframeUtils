@@ -6,9 +6,21 @@ df = pd.DataFrame(columns= col_names)
 -----------------------------------------------
 
 2. Add new row to dataframe 
+( Method 1 : Only for a few specified columns ) 
+
 new_row = {'image_name':file_in_class, 'tags':''}
 #append row to the dataframe
 df_out = df_out.append(new_row, ignore_index=True)
+
+
+Method 2 
+In case you dont want to enter for all the column values 
+    
+    data_values = [instid,min_event_code,max_event_code,num_records,_sec,_min,_hours,_days]
+    new_row = pd.Series(data_values,index=df_final.columns )
+    df_final = df_final.append(new_row, ignore_index=True)
+
+
 
 * remove duplicates from a dataframe based on one column
 df_out = df_out.drop_duplicates(subset='image_name', keep='first')
