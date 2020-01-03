@@ -8,5 +8,6 @@ def filter_df(df_in,query) :
     #filtered_df.to_csv(output_file_name, encoding='utf-8', index=None)
     return df_out
 
-#usage
-df_filtered= filter_df(train_head,'target==1')    
+#usage 
+# target - a numeric column in the train dataframe 
+df_filtered= filter_df(train,'target==1')    
