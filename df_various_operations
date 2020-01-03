@@ -1,0 +1,4 @@
+1. Create a new dataframe with columns only 
+
+col_name =['A','B','C','D','E','F','G']
+df = pd.DataFrame(columns= col_names)
