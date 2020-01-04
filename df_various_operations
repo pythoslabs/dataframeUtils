@@ -1,70 +1,82 @@
-1. Create a new dataframe with columns only 
+
+* reading only select columns 
+# Useful when reading very big files 
+
+    cold_to_read = ['id','value','price']
+    sample_test = pd.read_csv("../../data/_sample_test.csv", usecols=cols_to_read)
+
+-----------------------------------------------
+* Create a new dataframe with columns only 
 
 col_name =['A','B','C','D','E','F','G']
 df = pd.DataFrame(columns= col_names)
 
 -----------------------------------------------
 
-2. Add new row to dataframe 
+* Add new row to dataframe 
 ( Method 1 : Only for a few specified columns ) 
 
-new_row = {'image_name':file_in_class, 'tags':''}
-#append row to the dataframe
-df_out = df_out.append(new_row, ignore_index=True)
+    new_row = {'image_name':file_in_class, 'tags':''}  # create the new row
+    df_out = df_out.append(new_row, ignore_index=True) # now append row to the dataframe
 
-
-Method 2 
-In case you dont want to enter for all the column values 
+Method 2 : In case you dont want to enter for all the column values 
     
     data_values = [instid,min_event_code,max_event_code,num_records,_sec,_min,_hours,_days]
     new_row = pd.Series(data_values,index=df_final.columns )
     df_final = df_final.append(new_row, ignore_index=True)
 
-
+-----------------------------------------------
 
 * remove duplicates from a dataframe based on one column
-df_out = df_out.drop_duplicates(subset='image_name', keep='first')
+    df_out = df_out.drop_duplicates(subset='image_name', keep='first')
+# Keep= first will only keep the record that has the duplicated key ( the next rows  will be removed 
+#- even if the other column values are different
 
+-----------------------------------------------
 
-selectively change datatype of a column while reading 
-combined_dataset = pd.read_csv("../data/mod/COMBINED_MOD_3.csv", dtype={'income_bracket':str})
+* selectively change datatype of a column while reading 
+    combined_dataset = pd.read_csv("../data/mod/combined.csv", dtype={'income_bracket':str})  # to string 
+    or 
+    sample_train = pd.read_csv("../../data/_sample_train.csv", parse_dates=['date_column']) # to date type
+    or
+    trn = pd.read_csv('../data_linux2.csv' ,parse_dates=True) #it will be read as an 'Object' datatype
 
+-----------------------------------------------
 
-Changing only one value of a cell 
- df.ix[row_num, 'column3] = val
- df.loc[this_date, 'column3'] = val
- df.at[this_date, 'column3'] = val
+*Changing only one value of a cell  ( Check this again )
 
+ df.ix[row_num, 'column_name'] = val
+ df.loc[this_date, 'column_name'] = val
+ df.at[this_date, 'column_name'] = val
+-----------------------------------------------
 
-
-Accessing the location 
+Accessing the data from a  location 
 test_df.iloc[row_num,column_num]   ( index location ?? )
 or 
 test_df.loc[0,'column_name']
 eg : test_df.iloc[0,0]
+-----------------------------------------------
 
-modifying the value at a cell location
+* modifying the value at a cell location
 test_df.iloc[row_num,column_num] = new_value
 eg : test_df.iloc[0,0] = 72
 
-importing file which has Date columns 
-trn = pd.read_csv('../data_linux2.csv' ,parse_dates=True)
-it will be read as an 'Object' datatype
+-----------------------------------------------
 
-dicing a dataframe 
+* dicing a dataframe 
 df1 = df.iloc[:,0:2]
+-----------------------------------------------
 
-Split a column into two - based on the value in a column
+* Split a column into two columns - based on the value in a column
 df['A'], df['B'] = df['AB'].str.split(' ', 1).str
+-----------------------------------------------
 
-
-
-Renaming column names ( specific ones )
+*Renaming column names ( specific ones )
 combined_df = combined_df.rename(columns={'num_records': 'num_usr_rec_log'})
+-----------------------------------------------
 
+* make a copy of the dataframe with selected columns
 features = ['LotArea', 'YearBuilt', '1stFlrSF', '2ndFlrSF', 'FullBath', 'BedroomAbvGr', 'TotRmsAbvGrd']
 X = X_full[features].copy()
-
-
 
 
