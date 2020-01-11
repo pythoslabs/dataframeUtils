@@ -13,6 +13,12 @@ df = pd.DataFrame(columns= col_names)
 
 -----------------------------------------------
 
+* Sorting values from 
+df= df.sort_values(['columnname'])
+
+
+-----------------------------------------------
+
 * Add new row to dataframe 
 ( Method 1 : Only for a few specified columns ) 
 
