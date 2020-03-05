@@ -18,6 +18,19 @@ df= df.sort_values(['columnname'])
 
 
 -----------------------------------------------
+* Convert a json formated list into a pandas dataframe
+df = pd.DataFrame().append(t, ignore_index=True)
+
+# here to is of the format 
+# {'date': datetime.datetime(2020, 3, 4, 9, 15, tzinfo=tzoffset(None, 19800)),
+# 'open': 248.05,
+# 'high': 249.9,
+# 'low': 247.35,
+# 'close': 248.65,
+# 'volume': 204117}
+
+# date , open , high, low, close, volumne -  becomes the header
+-----------------------------------------------
 
 * Add new row to dataframe 
 ( Method 1 : Only for a few specified columns ) 
