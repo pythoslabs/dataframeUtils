@@ -75,6 +75,13 @@ or
 test_df.loc[0,'column_name']
 eg : test_df.iloc[0,0]
 -----------------------------------------------
+#iterate through a data frame 
+# i gives the index , j gives the row values . 
+# image_name is a column in the dataframe
+for i,j in df_img_files.iterrows(): 
+    print(j.image_name) 
+    
+-----------------------------------------------
 
 * modifying the value at a cell location
 test_df.iloc[row_num,column_num] = new_value
