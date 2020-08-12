@@ -11,3 +11,9 @@ def filter_df(df_in,query) :
 #usage 
 # target - a numeric column in the train dataframe 
 df_filtered= filter_df(train,'target==1')    
+
+#..........................................................
+
+# Tip : If you want to pass a variable ( even string/int) into the query function , use @
+var = 1 
+df= df.query('target == @var')
