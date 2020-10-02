@@ -50,7 +50,7 @@ Method 2 : In case you dont want to enter for all the column values
 
 df_out = df_out.drop_duplicates(subset='col1', keep='first')
 or
-df_out = df_out.drop_duplicates(subset = ['col1' , 'col2'],keep ='first']
+df_out = df_out.drop_duplicates(subset = ['col1' , 'col2'],keep ='first')
 
 # col1  = column name to dedupe by ( use more columns if you want to check uniquesness across multiple columns  )
 # keep= first will only keep the record that has the duplicated key ( the next rows  will be removed 
