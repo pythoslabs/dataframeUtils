@@ -48,8 +48,11 @@ Method 2 : In case you dont want to enter for all the column values
 
 * remove duplicates from a dataframe based on one column
 
-df_out = df_out.drop_duplicates(subset='image_name', keep='first')
-# subset  = column name to dedupe by 
+df_out = df_out.drop_duplicates(subset='col1', keep='first')
+or
+df_out = df_out.drop_duplicates(subset = ['col1' , 'col2'],keep ='first']
+
+# col1  = column name to dedupe by ( use more columns if you want to check uniquesness across multiple columns  )
 # keep= first will only keep the record that has the duplicated key ( the next rows  will be removed 
 #-even if the other column values are different  ( option = last, first )
 
