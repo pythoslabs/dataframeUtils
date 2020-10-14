@@ -33,6 +33,10 @@ df = pd.DataFrame().append(t, ignore_index=True)
 -----------------------------------------------
 
 * Add new row to dataframe 
+step 1 : create an output dataframe 
+columns = ['image_name','tags'  ]
+df_out  = pd.DataFrame (columns=columns )
+
 ( Method 1 : Only for a few specified columns ) 
 
     new_row = {'image_name':file_in_class, 'tags':''}  # create the new row
