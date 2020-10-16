@@ -42,7 +42,8 @@ df_out  = pd.DataFrame (columns=columns )
     new_row = {'image_name':file_in_class, 'tags':''}  # create the new row
     df_out = df_out.append(new_row, ignore_index=True) # now append row to the dataframe
 
-Method 2 : In case you dont want to enter for all the column values 
+Method 2 : In case you want to enter for all values ( Note : maintain the sequence of the variables 
+according to the order of the column numbers
     
     data_values = [instid,min_event_code,max_event_code,num_records,_sec,_min,_hours,_days]
     new_row = pd.Series(data_values,index=df_final.columns )
